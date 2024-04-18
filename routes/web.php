@@ -8,4 +8,4 @@ Route::get('/', function () {
 });
 
 Route::get('/experience',[HomeformController::class, 'create'])->name('experience');
-Route::post('/experience',[HomeformController::class, 'store'])->name('post.homeform');
+Route::post('/experience',[HomeformController::class, 'store'])->name('post.experience');

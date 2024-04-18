@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('experience', function (Blueprint $table) {
+        Schema::create('homeforms', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string("email");
             $table->string("date");
-            $table->string("activité");
+            $table->string("activite");
             $table->string("site");
             $table->string("titre");
             $table->string("description");
-            $table->boolean("reception_email");
+            $table->string("reception_email");
             $table->string("avis");
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('experience');
+        Schema::dropIfExists('homeforms');
     }
 };

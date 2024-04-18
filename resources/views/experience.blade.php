@@ -25,7 +25,7 @@
         </div>
     </section>
     <section id="formulaireaccueil">
-    <form method="POST" action="{{route('experience')}}">
+    <form method="POST" action="{{ route('post.experience') }}">
         @csrf
         <p>
             <label for="email">E-mail</label><br>
@@ -37,7 +37,7 @@
         </p>
         <p>
             <label for="nom">Nom de l'activité</label><br>
-            <input type="text" name="nom" placeholder="Spéléologie">
+            <input type="text" name="activite" placeholder="Spéléologie">
         </p>
         <p>
             <label for="nom">Nom du site</label><br>
@@ -60,15 +60,13 @@
             <input type="radio" name="reception_email" value="non"> 
                 Non
         </label>
-        <label for="avis">SELECT :</label><br>
-        <select id="avis" name="Avis">
-            <option value="peu_satisfait">Peu satisfait</option>
-            <option value="pas_satisfait">Pas satisfait</option>
-            <option value="moyennement_satisfait">Moyennement satisfait</option>
-            <option value="satisfait">Satisfait</option>
-            <option value="tres_satisfait">Très satisfait</option>
+        <label for="avis">Avis :</label>
+        <select id="avis" name="avis">
+            @foreach ($avis_options as $value => $label)
+                <option value="{{ $value }}">{{ $label }}</option>
+            @endforeach
+        </select>
         </select><br><br>
-        <a href="{{route('experience')}}">
         <button type="submit">Soumettre</button>
         </a>
     </form>

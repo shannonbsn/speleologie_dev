@@ -1,0 +1,23 @@
+#header {
+    background-color: #1b1b1f;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+#header img {
+    width: 70px;
+}
+
+#header a {
+    list-style: none;
+    color: white;
+    margin-left: 20px;
+}
+
+#header svg {
+    color: white;
+}
+
+#formulaireaccueil {}

@@ -48,7 +48,7 @@
         </p>
         <p>
             <label for="nom">Nom du site</label><br>
-            <input type="text" name="site" placeholder="Terrain 2">
+            <input type="text" name="site" placeholder="Grotte 2">
         </p>
         <p>
             <label for="nom">Titre du retour</label><br>

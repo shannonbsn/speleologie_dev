@@ -60,6 +60,7 @@
                                     <th>Nom du site</th>
                                     <th>Titre du retour</th>
                                     <th>Description du retour d'expérience</th>
+                                    <th>Recpetion e-mail</th>
                                     <th>Avis</th>
                                 </tr>
                     
@@ -71,6 +72,7 @@
                                     <td>{{ $experience->site }}</td>
                                     <td>{{ $experience->titre }}</td>
                                     <td>{{ $experience->description }}</td>
+                                    <td>{{ $experience->reception_email }}</td>
                                     <td>{{ $experience->avis }}</td>
                                     {{-- <td><a href="{{ route('modification',['modification'=> $editexperience->id]) }}"></td> --}}
                                 </tr>

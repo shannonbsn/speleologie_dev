@@ -24,28 +24,30 @@ class HomeformController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'email' => 'required',
-            'activite' => 'required',
-            'site' => 'required',
-            'date' => 'required',
-            'titre' => 'required',
-            'description' => 'required',
-            'avis' => 'required',
-            'reception_email' => 'required',
-        ]);
+        $experience = new homeform();
+        $experience->email = $request->input('email');
+        $experience->activite = $request->input('activite');
+        $experience->site = $request->input('site');
+        $experience->date = $request->input('date');
+        $experience->titre = $request->input('titre');
+        $experience->description = $request->input('description');
+        $experience->avis = $request->input('avis');
+        $experience->reception_email = $request->input('reception_email');
+ 
+        // Enregistrement de la nouvelle instance dans la base de données
+        $experience->save();
+ 
+        // Redirection vers une autre page après l'enregistrement
     
-        Homeform::create($validatedData);
-    
-        return redirect('/')->with('success', 'Form submitted successfully!');
+        return redirect('/');
     }
 
     public function create()
 {
     return view('experience', [
         'avis_options' => [
-            'peu_satisfait' => 'Peu satisfait',
-            'pas_satisfait' => 'Pas satisfait',
+            'peu_satisfait' => 'Pas satisfait',
+            'pas_satisfait' => 'Peu satisfait',
             'moyennement_satisfait' => 'Moyennement satisfait',
             'satisfait' => 'Satisfait',
             'tres_satisfait' => 'Très satisfait',
@@ -83,5 +85,11 @@ class HomeformController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function showConsultationExperience()
+    {
+        $publishedpost = Homeform::all();
+        return view('home', ['publishedpost' => $publishedpost]);
     }
 }

@@ -24,7 +24,7 @@
               </svg>
         </div>
     </section>
-    <section id="formulaireaccueil">
+    <section id="retourexperienceform">
     <form method="POST" action="{{ route('post.experience') }}">
         @csrf
         <p>
@@ -59,7 +59,7 @@
         <label> 
             <input type="radio" name="reception_email" value="non"> 
                 Non
-        </label>
+        </label><br> <br> 
         <label for="avis">Avis :</label>
         <select id="avis" name="avis">
             @foreach ($avis_options as $value => $label)
@@ -70,6 +70,12 @@
         <button type="submit">Soumettre</button>
         </a>
     </form>
+    </section>
+    <section id="footer">
+        <p>FFS - Fédération Française de Spéléologie</p>
+        <p>28 rue Delandine - 69002 Lyon</p>
+        <p>Tél : +33 4 72 56 09 63</p>
+        <p>Fax : +33 4 78 42 15 98</p>
     </section>
 </body>
 </html>

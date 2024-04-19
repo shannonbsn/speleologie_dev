@@ -24,5 +24,38 @@
               </svg>
         </div>
     </section>
+    <section id="experienceaccueil">
+        <div>
+            <h1>Retour d'expériences</h1>
+            <table>
+                <tr>
+                    <th>E-mail</th>
+                    <th>Date de l'évènement</th>
+                    <th>Nom de l'activité</th>
+                    <th>Nom du site</th>
+                    <th>Titre du retour</th>
+                    <th>Description du retour d'expérience</th>
+                    <th>Avis</th>
+                </tr>
+    
+                @foreach($publishedpost as $experience)
+                <tr>
+                    <td>{{ $experience->email }}</td>
+                    <td>{{ $experience->date }}</td>
+                    <td>{{ $experience->activite }}</td>
+                    <td>{{ $experience->site }}</td>
+                    <td>{{ $experience->titre }}</td>
+                    <td>{{ $experience->description }}</td>
+                    <td>{{ $experience->avis }}</td>
+                </tr>
+                @endforeach 
+            </table>
+    </section>
+    <section id="footer">
+        <p>FFS - Fédération Française de Spéléologie</p>
+        <p>28 rue Delandine - 69002 Lyon</p>
+        <p>Tél : +33 4 72 56 09 63</p>
+        <p>Fax : +33 4 78 42 15 98</p>
+    </section>
 </body>
 </html>

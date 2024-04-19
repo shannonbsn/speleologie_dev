@@ -20,6 +20,11 @@
     color: white;
 }
 
+#header #svg {
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 #retourexperienceform {
     display: flex;
     justify-content: center;

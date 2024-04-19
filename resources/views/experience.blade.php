@@ -36,27 +36,27 @@
         
         <p>
             <label for="email">E-mail</label><br>
-            <input type="text" name="email" placeholder="sha@mds.org">
+            <input type="text" name="email" placeholder="sha@mds.org" required>
         </p>
         <p>
             <label for="date_de_naissance">Date de l'évènement</label><br>
-            <input type="date" name="date" placeholder="2024-02-04">
+            <input type="date" name="date" placeholder="2024-02-04" required>
         </p>
         <p>
             <label for="nom">Nom de l'activité</label><br>
-            <input type="text" name="activite" placeholder="Spéléologie">
+            <input type="text" name="activite" placeholder="Spéléologie" required>
         </p>
         <p>
             <label for="nom">Nom du site</label><br>
-            <input type="text" name="site" placeholder="Grotte 2">
+            <input type="text" name="site" placeholder="Grotte 2" required>
         </p>
         <p>
             <label for="nom">Titre du retour</label><br>
-            <input type="text" name="titre" placeholder="Problème avec ma lampe">
+            <input type="text" name="titre" placeholder="Problème avec ma lampe" required>
         </p>
         <p>
             <label for="nom">Description du retour d'expérience</label><br>
-            <input type="text" name="description" placeholder="Expérience">
+            <input type="text" name="description" placeholder="Expérience" required>
         </p>
         <label> 
             <p>Souhaitez-vous recevoir des e-mails de la fédération française de la spéléologie ?</p>

@@ -18,5 +18,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/experience',[HomeformController::class, 'create'])->name('experience');
 Route::post('/experience',[HomeformController::class, 'store'])->name('post.experience');
 Route::get('/',[HomeformController::class, 'showConsultationExperience'])->name('show.experience');
+Route::get('/modification',[ModificationController::class,'edit'])->name('modification');
+
+/* Route::get('/modification/$id',[ModificationController::class,'update'])->name('modification'); */
 
 require __DIR__.'/auth.php';

@@ -54,19 +54,12 @@ class ModificationController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $experience = Homeform::find($id);
-        $experience->email = $request->input('email');
-        $experience->activite = $request->input('activite');
-        $experience->site = $request->input('site');
-        $experience->date = $request->input('date');
-        $experience->titre = $request->input('titre');
-        $experience->description = $request->input('description');
-        $experience->avis = $request->input('avis');
-        $experience->reception_email = $request->input('reception_email');
+    $experience = Homeform::find($id);
+    $experience->valide = $request->input('valide') == 'true';
 
-        $experience->save();
+    $experience->save();
 
-        return redirect('/dashboard');
+    return redirect('/dashboard');
     }
 
     /**

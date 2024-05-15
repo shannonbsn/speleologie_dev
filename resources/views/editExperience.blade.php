@@ -46,11 +46,20 @@
         <input type="text" name="titre" value="{{ $editexperience->titre }}" required>
         <label for="description">Description:</label>
         <textarea name="description" required>{{ $editexperience->description }}</textarea>
-        <label for="reception_email">Email de Réception:</label>
-        <input type="email" name="reception_email" value="{{ $editexperience->reception_email }}" required>
+        <label> 
+            <p>Souhaitez-vous recevoir des e-mails de la fédération française de la spéléologie ?</p>
+            <input type="radio" name="reception_email" value="oui" checked> 
+                Oui 
+        </label> <br> 
+        <label> 
+            <input type="radio" name="reception_email" value="non"> 
+                Non
+        </label> <br><br>
         <label for="avis">Avis:</label>
-        <textarea name="avis" required>{{ $editexperience->avis }}</textarea>
-        <button type="submit">Sauvegarder</button>
+        <textarea name="avis" required>{{ $editexperience->avis }}</textarea> <br><br>
+        @method('PUT')
+        <input type="hidden" name="valide" value="true">
+        <button type="submit">Valider</button>
     </form>
     <section id="footer">
         <p>FFS - Fédération Française de Spéléologie</p>

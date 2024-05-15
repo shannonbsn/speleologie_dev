@@ -85,6 +85,7 @@ class HomeformController extends Controller
         $experience->description = $request->input('description');
         $experience->avis = $request->input('avis');
         $experience->reception_email = $request->input('reception_email');
+        $experience->valide = $request->input('valide');
 
         $experience->save();
 
@@ -101,8 +102,7 @@ class HomeformController extends Controller
 
     public function showConsultationExperience()
     {
-        $publishedpost = Homeform::all();
+        $publishedpost = Homeform::where('valide', true)->get();
         return view('home', ['publishedpost' => $publishedpost]);
-        return view('ModerationExperience', ['publishedpost' => $publishedpost]);
     }
 }

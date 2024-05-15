@@ -24,6 +24,7 @@ Route::get('/ModerationExperiences', [ModificationController::class, 'showConsul
 
 Route::get('/modification/{id}', [ModificationController::class, 'edit'])->name('modification');
 Route::post('/modification/{id}', [ModificationController::class, 'update'])->name('modification.update');
+Route::put('/modification/{id}', [ModificationController::class, 'update'])->name('modification.update');
 
 require __DIR__.'/auth.php';
 

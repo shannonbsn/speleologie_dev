@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Homeform;
+use App\Models\ModificationExperience;
 
 class ModificationController extends Controller
 {
@@ -56,7 +58,19 @@ class ModificationController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $experience = Homeform::find($id);
+        $experience->email = $request->input('email');
+        $experience->activite = $request->input('activite');
+        $experience->site = $request->input('site');
+        $experience->date = $request->input('date');
+        $experience->titre = $request->input('titre');
+        $experience->description = $request->input('description');
+        $experience->avis = $request->input('avis');
+        $experience->reception_email = $request->input('reception_email');
+
+        $experience->save();
+
+        return redirect('/dashboard');
     }
 
     /**
@@ -67,4 +81,9 @@ class ModificationController extends Controller
         //
     }
 
+    public function showConsultationExperience()
+    {
+        $publishedpost = Homeform::all();
+        return view('ModerationExperience', ['publishedpost' => $publishedpost]);
+    }
 }

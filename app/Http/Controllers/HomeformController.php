@@ -103,5 +103,6 @@ class HomeformController extends Controller
     {
         $publishedpost = Homeform::all();
         return view('home', ['publishedpost' => $publishedpost]);
+        return view('ModerationExperience', ['publishedpost' => $publishedpost]);
     }
 }

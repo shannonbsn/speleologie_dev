@@ -78,6 +78,9 @@
                                 </tr>
                                 @endforeach 
                             </table>
+                            <a href="/ModerationExperiences" id="bouttonDashboard">
+                                <button>voir</button>
+                            </a>
                     </section>                
             </div>
         </div>

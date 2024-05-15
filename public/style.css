@@ -66,6 +66,20 @@
     margin: 10px;
 }
 
+#bouttonDashboard {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+}
+
+#bouttonDashboard button {
+    background-color: #ccd100;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 5px;
+}
+
 #footer {
     background-color: #1b1b1f;
     display: flex;

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeformController;
 use App\Http\Controllers\ModerateurController;
+use App\Http\Controllers\ModificationController;
 
 
 Route::middleware('auth')->group(function () {
@@ -19,7 +20,9 @@ Route::get('/experience',[HomeformController::class, 'create'])->name('experienc
 Route::post('/experience',[HomeformController::class, 'store'])->name('post.experience');
 Route::get('/',[HomeformController::class, 'showConsultationExperience'])->name('show.experience');
 Route::get('/modification',[ModificationController::class,'edit'])->name('modification');
+Route::get('/ModerationExperiences', [ModificationController::class, 'showConsultationExperience'])->name('show.modifexperience');
 
 /* Route::get('/modification/$id',[ModificationController::class,'update'])->name('modification'); */
 
 require __DIR__.'/auth.php';
+

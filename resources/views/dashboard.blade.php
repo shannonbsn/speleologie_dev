@@ -74,7 +74,6 @@
                                     <td>{{ $experience->description }}</td>
                                     <td>{{ $experience->reception_email }}</td>
                                     <td>{{ $experience->avis }}</td>
-                                    {{-- <td><a href="{{ route('modification',['modification'=> $editexperience->id]) }}"></td> --}}
                                 </tr>
                                 @endforeach 
                             </table>

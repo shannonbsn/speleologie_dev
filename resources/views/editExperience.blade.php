@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Accueil</title>
+    <title>Modifier</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <section id="header">
-        <a href="/">
+        <a href="">
             <img src="https://ffspeleo.fr/csx/scripts/resizer.php?filename=CHARTEX%2Flogobighome%2F68%2F99%2Ffiz5cgpdphyq&mime=image%252Fsvg%252Bxml&originalname=ffs-bottom-logo.svg&geometry=640x480%3E" alt="logo">
         </a>
         <nav>
-            <a href="{{route('experience')}}"> Expériences</a>
+            <a href="{{route('experience')}}"> Expérience</a>
         </nav>
         <div>
             <a href="{{route('login')}}">
@@ -31,36 +31,27 @@
         </div>
     </section>
 
-    <section id="moderateurform">
-        <div>
-            <h1>Retour d'expériences</h1>
-            <table>
-                <tr>
-                    <th>E-mail</th>
-                    <th>Date de l'évènement</th>
-                    <th>Nom de l'activité</th>
-                    <th>Nom du site</th>
-                    <th>Titre du retour</th>
-                    <th>Description du retour d'expérience</th>
-                    <th>Recpetion e-mail</th>
-                    <th>Avis</th>
-                </tr>
-    
-                @foreach($publishedpost as $experience)
-                <tr>
-                    <td>{{ $experience->email }}</td>
-                    <td>{{ $experience->date }}</td>
-                    <td>{{ $experience->activite }}</td>
-                    <td>{{ $experience->site }}</td>
-                    <td>{{ $experience->titre }}</td>
-                    <td>{{ $experience->description }}</td>
-                    <td>{{ $experience->reception_email }}</td>
-                    <td>{{ $experience->avis }}</td>
-                    <td><a href="{{ route('modification', ['id' => $experience->id]) }}">Modifier</a></td>
-                </tr>
-                @endforeach 
-            </table>
-
+    <h1>Éditer l'Expérience</h1>
+    <form action="{{ route('modification.update', ['id' => $editexperience->id]) }}" method="POST">
+        @csrf
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="{{ $editexperience->email }}" required>
+        <label for="date">Date:</label>
+        <input type="date" name="date" value="{{ $editexperience->date }}" required>
+        <label for="activite">Activité:</label>
+        <input type="text" name="activite" value="{{ $editexperience->activite }}" required>
+        <label for="site">Site:</label>
+        <input type="text" name="site" value="{{ $editexperience->site }}" required>
+        <label for="titre">Titre:</label>
+        <input type="text" name="titre" value="{{ $editexperience->titre }}" required>
+        <label for="description">Description:</label>
+        <textarea name="description" required>{{ $editexperience->description }}</textarea>
+        <label for="reception_email">Email de Réception:</label>
+        <input type="email" name="reception_email" value="{{ $editexperience->reception_email }}" required>
+        <label for="avis">Avis:</label>
+        <textarea name="avis" required>{{ $editexperience->avis }}</textarea>
+        <button type="submit">Sauvegarder</button>
+    </form>
     <section id="footer">
         <p>FFS - Fédération Française de Spéléologie</p>
         <p>28 rue Delandine - 69002 Lyon</p>

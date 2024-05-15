@@ -43,14 +43,10 @@ class ModificationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Homeform $editexperience, Request $request)
+    public function edit($id)
     {
-        $editexperience->email = $request->adresse;
-        $editexperience->date = $request->photo;
-
-        $editexperience->save();
-
-        return redirect("/dashboard");
+    $editexperience = Homeform::find($id);
+    return view('editExperience', compact('editexperience'));
     }
 
     /**

@@ -22,7 +22,8 @@ Route::get('/',[HomeformController::class, 'showConsultationExperience'])->name(
 Route::get('/modification',[ModificationController::class,'edit'])->name('modification');
 Route::get('/ModerationExperiences', [ModificationController::class, 'showConsultationExperience'])->name('show.modifexperience');
 
-/* Route::get('/modification/$id',[ModificationController::class,'update'])->name('modification'); */
+Route::get('/modification/{id}', [ModificationController::class, 'edit'])->name('modification');
+Route::post('/modification/{id}', [ModificationController::class, 'update'])->name('modification.update');
 
 require __DIR__.'/auth.php';
 

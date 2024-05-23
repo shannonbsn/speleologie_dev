@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Modifier</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./public/style.css">
 </head>
 <body>
     <section id="header">
-        <a href="">
+        <a href="/">
             <img src="https://ffspeleo.fr/csx/scripts/resizer.php?filename=CHARTEX%2Flogobighome%2F68%2F99%2Ffiz5cgpdphyq&mime=image%252Fsvg%252Bxml&originalname=ffs-bottom-logo.svg&geometry=640x480%3E" alt="logo">
         </a>
         <nav>
-            <a href="{{route('experience')}}"> Expérience</a>
+            <a href="{{route('experience')}}"> Expériences</a>
         </nav>
         <div>
             <a href="{{route('login')}}">

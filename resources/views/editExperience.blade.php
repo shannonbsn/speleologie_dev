@@ -56,7 +56,12 @@
                 Non
         </label> <br><br>
         <label for="avis">Avis:</label>
-        <textarea name="avis" required>{{ $editexperience->avis }}</textarea> <br><br>
+        <label for="avis">Avis :</label>
+        <select id="avis" name="avis">
+            @foreach ($avis_options as $value => $label)
+                <option value="{{ $value }}">{{ $label }}</option>
+            @endforeach
+        </select> <br><br>
         @method('PUT')
         <input type="hidden" name="valide" value="true">
         <button type="submit">Valider</button>

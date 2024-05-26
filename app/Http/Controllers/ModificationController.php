@@ -44,7 +44,17 @@ class ModificationController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit($id)
+    
     {
+        return view('experience', [
+        'avis_options' => [
+            'peu_satisfait' => 'Pas satisfait',
+            'pas_satisfait' => 'Peu satisfait',
+            'moyennement_satisfait' => 'Moyennement satisfait',
+            'satisfait' => 'Satisfait',
+            'tres_satisfait' => 'Très satisfait',
+        ],
+    ]);
     $editexperience = Homeform::find($id);
     return view('editExperience', compact('editexperience'));
     }
